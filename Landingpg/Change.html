@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)file:///C:/Users/devon/Downloads/time.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        
+        <title>
+            UAT Space Program
+        </title>
+        <style>
+            h2{
+                text-align: center;
+                font-size: 40px;
+                margin-top: 0px;
+            }
+            .container{
+                width: 100%;
+                display: grid;
+            }
+            button{
+                margin: auto;
+            }
+            h1{
+                text-align: center;
+            }
+            img{
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            .sidenav {
+  height: 100%; 
+  width: 0;
+  position: fixed; 
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+  background-color: purple; 
+  overflow-x: hidden; 
+  padding-top: 60px;
+  transition: 0.5s; 
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+        </style>
+       <script> 
+
+        function playStation(){
+          mySound = new sound("maxkomusic-space-heroes.mp3");
+          mySound.play();
+       }
+       function StopStation(){
+         mySound = new sound("maxkomusic-space-heroes.mp3");
+         mySound.stop();
+       }
+        function sound(srcFile){
+          this.sound = document.createElement("audio");
+          this.sound.src = srcFile;
+          this.sound.setAttribute("preload","audio");
+          this.sound.setAttribute("contorls","none");
+          this.sound.style.display="none";
+          document.body.appendChild(this.sound);
+        this.stop=function(){
+            this.sound.pause();
+        }  
+        this.play=function(){
+              this.sound.play();
+          }
+        
+        
+    }
+
+       function CountDown(){
+        StopStation();
+        playStation();
+       
+        var currTime = 55
+        var timeDown = setInterval(function() {
+            currTime = currTime - 5;
+            document.getElementById("timer").innerHTML = "The time is: " + currTime;
+            if(currTime == 0){
+                clearInterval(timeDown);
+               document.getElementById("timer").innerHTML = "BLASTOFF!!!!";
+            }else if(currTime < 25){
+            document.getElementById("timer").innerHTML = "Warning Less than half way to launch, time left " + currTime;               
+            } 
+         }, 5000);
+    };</script>
+    
+    </head>
+    <body style="background-color: darkorchid; align-content: center;">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Landingpg.html">Home Page</a>
+            <a href="Login.html">Log in</a>
+            <a href="UATpg.html">UAT Boards Page</a>
+          </div>
+          <button onclick="openNav()">Open NAV Here!</button>
+          <div class="woah"></div>
+          <div id="main">
+          
+        <script>
+        
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+        </script>
+        <h2>
+            Count Down Before Launch :)))
+        </h2>
+        <h2 id="timer">Get Ready!</h2>
+        <img src="procket.jpg" alt="Rocket Ship" width="300" height="300"> 
+        <h1>
+            UAT Space Program
+        </h1>
+        <div class="container">
+            <button onclick="CountDown()">PRESS TO LAUNCH!!</button>
+        </div>
+          </div>
+          
+</body>
+</html>

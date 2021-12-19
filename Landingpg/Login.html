@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head><script>
+            function verifyPassword() {
+              var fn = document.getElementById("fname").value
+              var bid = document.getElementById("bgnum").value;
+              if(fn == ""||bid == "") {
+                 document.getElementById("message").innerHTML = "**Fill the Name and Id number please!";
+                 return false;
+              }
+              if(fn.length < 3) {
+                 document.getElementById("message").innerHTML = "** Please insert full name as asked";
+                 return false;
+              }
+              if(fn.length > 20) {
+                 document.getElementById("message").innerHTML = "**length must not exceed 20 characters please re-enter name";
+                 return false;
+              } else if(bid<0||bid>999){
+                document.getElementById("message").innerHTML = "** length of ID must not excede 3 characters";
+                 return false;
+              }
+              else {
+                 alert("Welcome, "+ fn);
+               } 
+              }
+            </script>
+            </head>
+    <body style="background-color: rgb(109, 76, 110);">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSBEkkKh4Igej3e4NdzDtAJyIhDeJIuAD0VA&usqp=CAU" alt="eye scanner">
+        <div class="container">
+              <br><label for="fname">Full Name</label>
+              <input type="text" id="fname" name="Name" placeholder="Your name"> </br>
+          
+              
+              <br><label for="bgnum">Badge ID</label>
+              <input type="number"  id="bgnum" name="badgenumber" placeholder="ID Number"></br>
+        </div>
+        
+        <form onsubmit ="return verifyPassword()" action="Change.html">
+            <span id = "message" style="color:red"> </span> <br><br>
+            <input type = "submit" value = "Submit">
+            </form>
+            <p>Full name and at least 3 numbers!</p>
+    </body>
+</html>

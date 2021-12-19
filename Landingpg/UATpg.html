@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+    .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: left;
+   font-size: large;
+}
+             h1{
+                 text-align: right;
+                 font-size: larger;
+                 margin-top: 0%;
+             }
+            .para{
+                 text-align: center;
+                 font-size: large;
+                 margin-top: 15%;
+            }
+    .sidenav {
+        height: 100%; 
+        width: 0;
+        position: fixed; 
+        z-index: 1; 
+        top: 0; 
+        left: 0;
+        background-color: purple; 
+        overflow-x: hidden; 
+        padding-top: 60px;
+        transition: 0.5s; 
+      }
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      #main {
+        transition: margin-left .5s;
+        padding: 20px;
+      }
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      }
+      
+     </style>
+</head>
+<body style="background-image: linear-gradient( to right, red, yellow, green);">
+    <h1>Devon Butler &nbsp;
+        Robotics and Embedded Systems</h1>
+        <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="Landingpg.html">Home Page</a>
+        <a href="Login.html">Log in</a>
+        <a href="Change.html">Space Page</a>
+        </div>
+      <button onclick="openNav()">Open NAV Here!</button>
+      <div id="main">
+      
+    <script>
+function openNav() {
+document.getElementById("mySidenav").style.width = "250px";
+document.getElementById("main").style.marginLeft = "250px";
+}
+function closeNav() {
+document.getElementById("mySidenav").style.width = "0";
+document.getElementById("main").style.marginLeft = "0";
+}
+    </script>
+        <div class="footer">
+            <p>University of Advancing Technology &nbsp; 2625 W. Baseline Rd. Tempe, AZ &nbsp;
+                 <a href="mailto:devonbutlerjr13@gmail.com">devonbutlerjr13@gmail.com</a></p>
+          </div>
+          <div class="para">
+          <p>
+          Robotics and Embedded Systems Major<br>
+           Objectives<br>
+          1. Design and complete robotic and embedded systems solutions that apply to real-world challenges.<br>
+          2. Implement a simple microprocessor using digital logic design.<br>
+          3. Demonstrate embedded system design skills, including, but not limited to, microcontroller selection, schematic design, printed circuit board layout.<br>
+          4. Apply knowledge of transducers, actuators and simultaneous hardware and software development in the design of an embedded system.<br>
+          5. Design and analyze real-time embedded systems, including advanced digital logic design, signal processing and high-speed digital systems.<br>
+          6. Implement and evaluate algorithms and methods enabling autonomy in a mobile robot.</p>
+        </div>
+</div>
+</body>
+</html>
