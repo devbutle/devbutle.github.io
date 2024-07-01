@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <body>
-    <p>hello</p>
+    <img src="ProviLOGO.png" alt="pro">
   </body>
 </head>
 </html>
